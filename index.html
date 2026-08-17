@@ -187,31 +187,80 @@
   .info-list span.val{font-weight:600; color:var(--ink); text-align:right;}
 
   .contact-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    width:100%;
-    background:var(--deep-green);
-    color:#fbf9f3;
-    text-align:center;
-    padding:14px;
-    border-radius:12px;
-    text-decoration:none;
-    font-family:'Kanit',sans-serif;
-    font-weight:600;
-    font-size:0.98rem;
-    margin-top:20px;
-    transition:transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
-    box-shadow:0 8px 18px -8px rgba(23,58,46,0.55);
-  }
-  .contact-btn:hover{
-    background:var(--deep-green-2);
-    transform:translateY(-1px);
-    box-shadow:0 10px 22px -8px rgba(23,58,46,0.6);
-  }
-  .contact-btn:active{transform:translateY(0);}
+  position:fixed;
+  right:24px;
+  bottom:24px;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  width:auto;
+  min-width:220px;
+
+  background:var(--deep-green);
+  color:#fbf9f3;
+
+  text-align:center;
+  padding:13px 20px;
+
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:999px;
+
+  text-decoration:none;
+
+  font-family:'Kanit',sans-serif;
+  font-weight:600;
+  font-size:0.95rem;
+
+  margin-top:0;
+
+  z-index:9998;
+
+  box-shadow:
+    0 8px 20px rgba(15,41,33,0.30),
+    0 2px 6px rgba(15,41,33,0.15);
+
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-btn:hover{
+  background:var(--deep-green-2);
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(15,41,33,0.35),
+    0 3px 8px rgba(15,41,33,0.18);
+}
+
+.contact-btn:active{
+  transform:translateY(-1px);
+}
+
+
+/* ---------- MOBILE ---------- */
+@media (max-width:640px){
+
+  .contact-btn{
+    right:14px;
+    bottom:14px;
+
+    min-width:0;
+    width:auto;
+
+    padding:11px 16px;
+
+    font-size:0.82rem;
+
+    box-shadow:
+      0 6px 18px rgba(15,41,33,0.30);
+  }
+
+}
   /* ---------- MAP / POV TABS ---------- */
   .map-tabs{
     display:inline-flex;
