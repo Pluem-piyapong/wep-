@@ -312,6 +312,9 @@
     transition:transform 0.35s ease;
   }
   .gallery-card:hover img{transform:scale(1.04);}
+.gallery-card.map-photo-card .img-wrap{aspect-ratio:16/10;background:#e8e5da;}
+.gallery-card.map-photo-card img{object-fit:contain;background:#e8e5da;}
+
   .gallery-tag{
     position:absolute;
     top:10px; left:10px;
@@ -365,7 +368,7 @@
       <div class="label">ขนาดเนื้อที่</div>
       <div class="value">23 ไร่ 66 ตร.วา</div>
     </div>
-    
+   
     <div class="stat">
       <div class="ic">📄</div>
       <div class="label">เอกสารสิทธิ์</div>
@@ -425,6 +428,16 @@
         <div class="gallery-caption">
           ภาพที่ดินจริง (POV)
           <span>บรรยากาศหน้าที่ดินจากมุมมองถนน ตำบลห้วยบง</span>
+        </div>
+      </div>
+      <div class="gallery-card map-photo-card">
+        <div class="img-wrap">
+          <span class="gallery-tag">🗺️ แผนผังแปลงที่ดิน</span>
+          <img src="mapp.png" alt="ภาพแผนผังและตำแหน่งแปลงที่ดิน">
+        </div>
+        <div class="gallery-caption">
+          แผนผังแปลงที่ดิน
+          <span>ภาพถ่ายดาวเทียมแสดงแนวเขตที่ดินและถนนโดยรอบ</span>
         </div>
       </div>
     </div>
