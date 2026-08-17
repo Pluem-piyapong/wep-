@@ -343,42 +343,67 @@
   }
 
   /* ---------- LANGUAGE SWITCHER ---------- */
+ .lang-switch{
+  position:fixed;
+  top:16px;
+  right:16px;
+
+  display:inline-flex;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:999px;
+  padding:3px;
+  gap:2px;
+
+  z-index:9999;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.lang-btn{
+  border:none;
+  background:transparent;
+  font-family:'Sarabun',sans-serif;
+  font-weight:600;
+  font-size:0.78rem;
+  color:rgba(251,249,243,0.75);
+
+  padding:6px 12px;
+  border-radius:999px;
+
+  cursor:pointer;
+  transition:background 0.15s ease, color 0.15s ease;
+  letter-spacing:0.02em;
+}
+
+.lang-btn.active{
+  background:var(--gold);
+  color:var(--deep-green-2);
+}
+
+.lang-btn:hover:not(.active){
+  background:rgba(255,255,255,0.12);
+  color:#fbf9f3;
+}
+
+/* มือถือ */
+@media (max-width:640px){
   .lang-switch{
-    position:absolute;
-    top:16px; right:16px;
+    position:fixed;
+    top:12px;
+    right:12px;
+
+    margin:0;
     display:inline-flex;
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.25);
-    border-radius:999px;
-    padding:3px;
-    gap:2px;
-    z-index:5;
-    backdrop-filter:blur(4px);
   }
+
   .lang-btn{
-    border:none;
-    background:transparent;
-    font-family:'Sarabun',sans-serif;
-    font-weight:600;
-    font-size:0.78rem;
-    color:rgba(251,249,243,0.75);
-    padding:6px 12px;
-    border-radius:999px;
-    cursor:pointer;
-    transition:background 0.15s ease, color 0.15s ease;
-    letter-spacing:0.02em;
+    font-size:0.72rem;
+    padding:5px 9px;
   }
-  .lang-btn.active{
-    background:var(--gold);
-    color:var(--deep-green-2);
-  }
-  .lang-btn:hover:not(.active){
-    background:rgba(255,255,255,0.12);
-    color:#fbf9f3;
-  }
-  @media (max-width:640px){
-    .lang-switch{ position:static; margin-bottom:14px; display:inline-flex; }
-  }
+}
 </style>
 </head>
 <body>
@@ -386,12 +411,11 @@
 <div class="container">
 
   <header class="header"> 
-  <div class="inner"> 
-    <div class="lang-switch">
-      <button type="button" class="lang-btn active" data-lang="th" onclick="setLang('th')">ไทย</button>
-      <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-      <button type="button" class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
-    </div>
+ <div class="lang-switch">
+  <button type="button" class="lang-btn active" data-lang="th" onclick="setLang('th')">ไทย</button>
+  <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  <button type="button" class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
+</div>
 
     <span class="eyebrow" data-i18n="eyebrow">ที่ดินเปล่า · ทำเลทอง</span> 
 
